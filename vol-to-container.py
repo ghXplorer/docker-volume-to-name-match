@@ -6,8 +6,6 @@ import subprocess
 docker_ps_a = "docker ps -a"
 process = subprocess.Popen(docker_ps_a.split(), stdout=subprocess.PIPE, text=True)
 output, error = process.communicate()
-
-
 docker_cont_names = [] # list of all docker container names
 for line in output.splitlines()[1:]:
     docker_cont_names.append(line.split()[-1])
@@ -16,7 +14,6 @@ for line in output.splitlines()[1:]:
 docker_volume_ls = "docker volume ls"
 process = subprocess.Popen(docker_volume_ls.split(), stdout=subprocess.PIPE, text=True)
 output, error = process.communicate()
-
 docker_volume_names = [] # list of all docker volume names
 for line in output.splitlines()[1:]:
     docker_volume_names.append(line.split()[-1])
