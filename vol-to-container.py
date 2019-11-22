@@ -17,7 +17,6 @@ docker_volume_ls = "docker volume ls"
 process = subprocess.Popen(docker_volume_ls.split(), stdout=subprocess.PIPE, text=True)
 output, error = process.communicate()
 
-
 docker_volume_names = [] # list of all docker volume names
 for line in output.splitlines()[1:]:
     docker_volume_names.append(line.split()[-1])
