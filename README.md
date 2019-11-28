@@ -1,2 +1,2 @@
 # docker-volume-to-name-match
-Python script that matches docker volumes to container names
+Python script that matches unnamed docker volumes to container names
